@@ -1,20 +1,23 @@
+import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
 
 
 function Footer(): React.JSX.Element{
+
+    const navigation = useNavigation();
     return(
         <View style={styles.footer}>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={()=> navigation.navigate('home')}>
                 <Image source={require('../assets/images/home.png')} style={styles.FooterIcon}/>
             </TouchableOpacity>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={()=> navigation.navigate('pesquisarProduto')}>
                 <Image source={require('../assets/images/lupe.png')} style={styles.FooterIcon}/>
             </TouchableOpacity>
             <TouchableOpacity>
                 <Image source={require('../assets/images/orders.png')} style={styles.FooterIcon}/>
             </TouchableOpacity>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={()=> navigation.navigate('profile')}>
                 <Image source={require('../assets/images/profile.png')} style={styles.FooterIcon}/>
             </TouchableOpacity>
         </View>
